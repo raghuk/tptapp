@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;" />
+
+  <title>Printer Details</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Acme', sans-serif !important;
+    }
+    .pdf-frame {
+      display: block; width: 90vw; height: 90vh
+    }
+  </style>
+</head>
+<body onload="loadData()">
+  <h4>Hello World</h4>
+  <iframe id='app-printer' class="pdf-frame" title="PDF Details`" src="" frameborder="1" type="application/pdf"></iframe>
+</body>
+<script>
+  const { ipcRenderer } = require('electron');
+
+  function loadData() {
+    ipcRenderer.invoke('load-print').then((result) => {
+      document.getElementById('app-printer').src = result;
+    });
+  }
+</script>
+</html>

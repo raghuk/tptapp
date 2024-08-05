@@ -1,0 +1,84 @@
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/roboto/700.css';
+
+@import '@fontsource/acme/400.css';
+
+@import '@fontsource-variable/public-sans';
+
+@import '@fontsource/barlow';
+
+@import './fonts.scss';
+
+
+// Scrollbar
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear, left bottom, left top,
+    color-stop(0.44, rgb(122,153,217)), color-stop(0.72, rgb(73,125,189)), color-stop(0.86, rgb(28,58,148)));
+}
+
+
+// Global Styles
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-root {
+  display: flex;
+  background-color: #EEF7FF;
+
+  ul.app-sidemenu {
+    > li {
+      a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        text-decoration: none;
+
+        span {
+          color: #2F3645;
+          font-size: 1.15rem;
+        }
+
+        &.active {
+          span, .MuiSvgIcon-root {
+            color: #7776B3;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: #EEF7FF;
+      }
+    }
+  }
+
+  .app-layout {
+    flex-grow: 1;
+    padding: 64px 10px 10px 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+
+// Component Styles
+.app-login {
+  width: 100%;
+  height: 100vh;
+}
